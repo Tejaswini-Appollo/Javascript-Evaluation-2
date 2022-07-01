@@ -1,10 +1,25 @@
-function primeNumbers(num) {
-    for(let i = 2; i <= num; i++) {
-        if(num % i !== 0) break;
-        else return num;
+let primeNumber = [];
+
+function isPrimeNumber(num) {
+    if(num == 1) {
+        return "1 is neither prime nor composite number."
+    }
+    else {
+        let flag = 0;
+        for(let k = 2; k < num; k++) {
+            if(num % k == 0) {
+                flag = 1;
+                break;
+            }
+        }
+        if(flag == 0) {
+            primeNumber.push(num);
+        }
     }
 }
 
-for(let i = 1; i <= 5; i++) {
-    console.log(primeNumbers(i));
+for(let i = 1; i <= 200; i++) {
+    isPrimeNumber(i);
 }
+
+console.log(primeNumber);
